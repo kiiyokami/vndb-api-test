@@ -1,5 +1,4 @@
 export async function load({ params }) {
-	console.log(params);
 	const requestHeaders = new Headers();
 	requestHeaders.append("Content-Type", "application/json");
 	
