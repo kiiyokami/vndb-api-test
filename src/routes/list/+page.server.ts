@@ -1,4 +1,4 @@
-import { vnList } from '../data';
+import { vnList } from '../../modules/datalist';
 
 export function load() {
   const list = Object.values(vnList.results).map((result: any) => ({

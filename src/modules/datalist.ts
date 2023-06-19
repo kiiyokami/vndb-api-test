@@ -3,7 +3,7 @@ myHeaders.append("Content-Type", "application/json");
 
 var raw = JSON.stringify({
   "user": "u225866",
-  "fields": "id, vote,vn.id, vn.title, vn.image.url,vn.description, vn.rating,vn.screenshots.url",
+  "fields": "id, vote,vn.id, vn.title",
   "filters": [
     "label",
     "=",

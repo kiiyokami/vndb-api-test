@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Montserrat&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,7 +6,5 @@
 :root{
     --primary-color: #FFA0C2;
     --secondary-color: #F9F5CE;
-
     --container-border: #9E7E44;
-
 }

@@ -13,10 +13,6 @@
 
     </div>
     <div>
-    <ul class='hidden sm:flex'>
-      <a href="/login" class='ml-5'>Login</a>
-      <a href="/register" class='ml-5'>Register</a>
-    </ul>
 
     </div>
       
@@ -42,6 +38,7 @@
       height: 4rem;
       width: 100%;
       font-size: larger;
+      font-family: 'Inter', sans-serif;
     }
     div.bg-image{
       height: 100%;
@@ -56,7 +53,7 @@
       background-color: var(--container-border);
       background-color: rgba(0,0,0,0.4);
       color: white;
-      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
       border: 3px solid #f1f1f1;
       position: absolute;
       top: 50%;
