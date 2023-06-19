@@ -1,7 +1,13 @@
 export async function load({ params }) {
-  console.log(params);
-  const requestHeaders = new Headers();
-  requestHeaders.append("Content-Type", "application/json");
+	const requestHeaders = new Headers();
+	requestHeaders.append("Content-Type", "application/json");
+	
+	const raw = JSON.stringify({
+	  "filters": ["id","=",params.id],
+	  "fields": "title, image.url, description, rating, screenshots.url"
+	});
+	
+	let jsonResponse : any;
 
   const raw = JSON.stringify({
     filters: ["id", "=", params.id],
