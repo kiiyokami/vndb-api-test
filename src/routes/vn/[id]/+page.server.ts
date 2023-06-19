@@ -9,13 +9,6 @@ export async function load({ params }) {
 	
 	let jsonResponse : any;
 
-  const raw = JSON.stringify({
-    filters: ["id", "=", params.id],
-    fields: "title, image.url, description, rating, screenshots.url",
-  });
-
-  let jsonResponse: any;
-
   try {
     const response = await fetch("https://api.vndb.org/kana/vn", {
       method: "POST",
