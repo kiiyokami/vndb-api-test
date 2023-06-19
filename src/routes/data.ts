@@ -1,7 +1,3 @@
-// import * as fileContents from '../vns.json';
-
-// 
-
 var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
