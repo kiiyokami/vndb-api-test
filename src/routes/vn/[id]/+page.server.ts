@@ -1,50 +1,28 @@
-export function load({ params }) {
-	const myHeaders = new Headers();
-	myHeaders.append("Content-Type", "application/json");
+export async function load({ params }) {
+	console.log(params);
+	const requestHeaders = new Headers();
+	requestHeaders.append("Content-Type", "application/json");
 	
 	const raw = JSON.stringify({
-	  "filters": [
-		"id",
-		"=",
-		params.id // Use the vnInfo value here ("v16044")
-	  ],
+	  "filters": ["id","=",params.id],
 	  "fields": "title, image.url, description, rating, screenshots.url"
 	});
 	
-	const requestOptions = {
-	  method: 'POST',
-	  headers: myHeaders,
-	  body: raw,
-	  redirect: 'follow' as RequestRedirect
-	};
-  
-	return fetch("https://api.vndb.org/kana/vn", requestOptions)
-	  .then(response => response.json())
-	  .then(result => {
-		let vnData;
-		try {
-		  vnData = result;
-		} catch (error) {
-		  if (error instanceof SyntaxError) {
-			console.error('fuck this error');
-		  }
-		  return { vnInfoData: null };
-		}
-		
-		// Use the vnData object for further processing or storing the extracted values
-		const vnInfoData = {
-		  title: vnData.results[0].title,
-		  image: vnData.results[0].image,
-		  description: vnData.results[0].description,
-		  rating: vnData.results[0].rating,
-		  screenshots: vnData.results[0].screenshots
+	let jsonResponse : any;
 
-		};
-		return { vnInfoData };
-	  })
-	  .catch(error => {
-		console.log('Error fetching data:', error);
-		return { vnInfoData: null };
-	  });
+	try{
+		const response = await fetch("https://api.vndb.org/kana/vn",{
+			method: 'POST',
+			headers: requestHeaders,
+			body: raw,
+			redirect: 'follow' as RequestRedirect
+		  })
+		  jsonResponse = await response.json();
+    	const results = jsonResponse.results[0];
+		return { vnInfo: results }
+		}catch (error) {
+		console.log(error);
+		return { vnInfo: null };
+	  }
   }
   

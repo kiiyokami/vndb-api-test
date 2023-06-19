@@ -6,13 +6,13 @@
 	const handleNextClick = () => {
 		carousel.goToNext();
 	};
-  </script>
+</script>
   
   <main>
-	{#if data}
-	  <h1 class="text-center font-semibold text-2xl">{data.vnInfoData.title}</h1>
-	  <img src={data.vnInfoData.image.url} alt="">
-	  <div>{@html data.vnInfoData.description.replace(/\[[^\]]*\]/g, '')}</div>
+	{#if data }
+	  <h1 class="text-center font-semibold text-2xl">{data.vnInfo.title}</h1>
+	  <img src={data.vnInfo.image.url} alt="">
+	  <div>{@html data.vnInfo.description.replace(/\[[^\]]*\]/g, '')}</div>
 	{:else}
 	  <p>Loading...</p>
 	{/if}
@@ -27,7 +27,7 @@
     autoplayProgressVisible
 	
 >	
-    {#each data.vnInfoData.screenshots as src, imageIndex (src)}
+    {#each data.vnInfo.screenshots as src, imageIndex (src)}
       <div class="image-container ">
         {#if loaded.includes(imageIndex)}
 			<img class="image" src={src.url} alt='content' width={600} />
