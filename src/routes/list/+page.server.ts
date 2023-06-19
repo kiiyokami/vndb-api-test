@@ -1,10 +1,5 @@
-import { vnList } from '../../modules/datalist';
+import { getListofVNs } from "../../modules/datalist";
 
-export function load() {
-  const list = Object.values(vnList.results).map((result: any) => ({
-    id: result.id,
-    title: result.vn.title
-  }));
-
-  return { list };
+export async function load() {
+  return { list: getListofVNs() };
 }

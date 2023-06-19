@@ -1,12 +1,11 @@
 <script>
-	export let data;
+  export let data;
 </script>
 
 <section>
-    <ul>
-    {#each data.list as { id, title }}
-      <li><a href="/vn/{id}">{title}</a></li>
+  <ul>
+    {#each data.list as item}
+      <li><a href="/vn/{item.id}">{item.title}</a></li>
     {/each}
-    </ul>
+  </ul>
 </section>
-
