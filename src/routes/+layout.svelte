@@ -56,7 +56,7 @@
       font-family: 'Montserrat', sans-serif;
       border: 3px solid #f1f1f1;
       position: absolute;
-      top: 50%;
+      top: 60%;
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 2;

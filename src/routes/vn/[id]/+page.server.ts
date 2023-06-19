@@ -38,8 +38,8 @@ export function load({ params }) {
 		  description: vnData.results[0].description,
 		  rating: vnData.results[0].rating,
 		  screenshots: vnData.results[0].screenshots
+
 		};
-		
 		return { vnInfoData };
 	  })
 	  .catch(error => {
